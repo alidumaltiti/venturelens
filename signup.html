@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - VentureLens</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="signup-page">
+    <header class="site-header">
+        <div class="container header-inner">
+          <div class="brand">
+            <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#007BFF"/><stop offset="1" stop-color="#0056b3"/></linearGradient></defs><rect rx="12" width="64" height="64" fill="url(#g)"></rect><path d="M18 40 L32 20 L46 40 Z" fill="white" opacity="0.95"></path></svg>
+            <div class="brand-text">
+              <h1>VentureLens</h1>
+              <p class="tagline">See your business potential clearly.</p>
+            </div>
+          </div>
+          <nav class="nav">
+            <a href="index.html" class="link">Home</a>
+            <a href="login.html" class="link">Login</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container">
+        <section class="feedback-section">
+            <h2>Create an Account</h2>
+            <form id="signupForm" class="feedback-form">
+              <label>Email
+                <input id="email" type="email" placeholder="Enter your email" required />
+              </label>
+              <label>Username
+                <input id="username" type="text" placeholder="Choose a username" required />
+              </label>
+              <label>Password
+                <input id="password" type="password" placeholder="Choose a password" minlength="8" required />
+              </label>
+              <label>Confirm Password
+                <input id="confirm-password" type="password" placeholder="Confirm your password" minlength="8" required />
+              </label>
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">Sign Up</button>
+              </div>
+              <p>Already have an account? <a href="login.html">Login here</a>.</p>
+            </form>
+          </section>
+      </main>
+
+      <footer class="site-footer container">
+        <div>
+          <strong>VentureLens</strong> — See your business potential clearly.
+        </div>
+        <div class="footer-links">
+          <small>&copy; 2025 VentureLens. All rights reserved.</small>
+        </div>
+      </footer>
+      <script src="app.js"></script>
+</body>
+</html>

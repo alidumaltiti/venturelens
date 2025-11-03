@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VentureLens - Feasibility Calculator for Startups</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+          <div class="brand">
+            <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#007BFF"/><stop offset="1" stop-color="#0056b3"/></linearGradient></defs><rect rx="12" width="64" height="64" fill="url(#g)"></rect><path d="M18 40 L32 20 L46 40 Z" fill="white" opacity="0.95"></path></svg>
+            <div class="brand-text">
+              <h1>VentureLens</h1>
+              <p class="tagline">See your business potential clearly.</p>
+            </div>
+          </div>
+      <nav class="nav" id="nav-main">
+        <!-- JS will populate this -->
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h2>Validate your idea before you build it.</h2>
+          <p>VentureLens is a friendly feasibility & viability calculator that analyzes market, costs, competition, and revenue to give you a clear score and practical steps to improve.</p>
+          <div class="cta-row">
+            <a href="calculator.html" class="btn-primary">Try the Calculator</a>
+            <a href="about.html" class="btn-ghost">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>How VentureLens works</h2>
+            <div class="feature-grid">
+              <div class="feature">
+                <h3>Guided Questions</h3>
+                <p>Short, focused questions that cover the essentials: market, costs, competition, revenue, and team.</p>
+              </div>
+              <div class="feature">
+                <h3>Weighted Scoring</h3>
+                <p>Each category influences the overall feasibility — we show which areas need attention first.</p>
+              </div>
+              <div class="feature">
+                <h3>Actionable Advice</h3>
+                <p>Receive tailored recommendations to improve viability, with next steps you can follow.</p>
+              </div>
+              <div class="feature">
+                <h3>Export & Share</h3>
+                <p>Print or download your assessment. Use it in funding applications or planning sessions.</p>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Environment Section -->
+    <section id="environment-feature" class="hero">
+        <div class="container hero-inner">
+            <div class="hero-copy">
+              <h2>Assess Your Environmental Impact</h2>
+              <p>Our new Environmental Impact Calculator helps you understand and improve the sustainability of your business. Get a score, receive recommendations, and find resources to build a greener, more profitable business.</p>
+              <div class="cta-row">
+                <a href="environment.html" class="btn-primary">Try the Eco-Calculator</a>
+              </div>
+            </div>
+          </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer container">
+    <div>
+      <strong>VentureLens</strong> — See your business potential clearly.
+    </div>
+    <div class="footer-links">
+        <small>&copy; 2025 VentureLens. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.getElementById('nav-main');
+      if (!nav) return;
+      const loggedInUser = sessionStorage.getItem('loggedInUser');
+      if (loggedInUser) {
+          nav.innerHTML = `
+              <a href="calculator.html" class="link">Calculator</a>
+              <a href="environment.html" class="link">Environment</a>
+              <a href="dashboard.html" class="link">My Dashboard</a>
+              <a href="#" id="logoutBtn" class="link">Logout</a>
+          `;
+          const logoutBtn = document.getElementById('logoutBtn');
+          if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                sessionStorage.removeItem('loggedInUser');
+                window.location.href = "index.html";
+            });
+          }
+      } else {
+          nav.innerHTML = `
+              <a href="login.html" class="link">Login</a>
+              <a href="signup.html" class="btn-primary small">Sign Up</a>
+          `;
+      }
+    });
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>

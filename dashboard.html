@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VentureLens Dashboard - Manage your business insights">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Dashboard - VentureLens</title>
+    <link rel="stylesheet" href="styles.css">
+<body id="dashboard-page">
+    <header class="site-header">
+        <div class="container header-inner">
+          <div class="brand">
+            <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#007BFF"/><stop offset="1" stop-color="#0056b3"/></linearGradient></defs><rect rx="12" width="64" height="64" fill="url(#g)"></rect><path d="M18 40 L32 20 L46 40 Z" fill="white" opacity="0.95"></path></svg>
+            <div class="brand-text">
+              <h1>VentureLens</h1>
+              <p class="tagline">See your business potential clearly.</p>
+            </div>
+          </div>
+          <nav class="nav">
+            <a href="index.html" class="link">Home</a>
+            <a href="calculator.html" class="link">Calculator</a>
+            <a href="environment.html" class="link">Environment</a>
+            <a href="dashboard.html" class="link">My Dashboard</a>
+            <a href="#" id="logoutBtn" class="link">Logout</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container">
+        <section id="dashboard-section">
+            <div class="calc-header">
+                <h2>My Dashboard</h2>
+                <p>Welcome, <span id="username-display"></span>!</p>
+            </div>
+
+            <div id="dashboard-content">
+                <!-- JS will inject user's saved reports here -->
+            </div>
+        </section>
+      </main>
+
+      <footer class="site-footer container">
+        <div>
+          <strong>VentureLens</strong> — See your business potential clearly.
+        </div>
+        <div class="footer-links">
+          <small>&copy; 2025 VentureLens. All rights reserved.</small>
+        </div>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="app.js"></script>
+</body>
+</html>

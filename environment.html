@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Impact - VentureLens</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="environment-page">
+    <header class="site-header">
+        <div class="container header-inner">
+          <div class="brand">
+            <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#007BFF"/><stop offset="1" stop-color="#0056b3"/></linearGradient></defs><rect rx="12" width="64" height="64" fill="url(#g)"></rect><path d="M18 40 L32 20 L46 40 Z" fill="white" opacity="0.95"></path></svg>
+            <div class="brand-text">
+              <h1>VentureLens</h1>
+              <p class="tagline">See your business potential clearly.</p>
+            </div>
+          </div>
+          <nav class="nav">
+            <a href="index.html" class="link">Home</a>
+            <a href="calculator.html" class="link">Calculator</a>
+            <a href="about.html" class="link">About</a>
+            <a href="feedback.html" class="link">Feedback</a>
+            <a href="environment.html" class="link">Environment</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container">
+        <section id="environment-calculator" class="calc-wrap">
+            <div class="calc-header">
+              <h2>Environmental Impact Calculator</h2>
+              <p>Assess the environmental friendliness of your business idea.</p>
+            </div>
+      
+            <div class="calc-grid">
+              <form id="envForm" class="calc-form" autocomplete="off">
+                <fieldset>
+                    <legend>Energy Consumption</legend>
+                    <label>How would you rate your estimated energy consumption? (1 = Very High, 5 = Very Low)
+                      <input type="range" id="energyConsumption" min="1" max="5" value="3" />
+                      <output id="energyConsumptionOut">3</output>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Waste Generation</legend>
+                    <label>How would you rate your estimated waste generation? (1 = Very High, 5 = Very Low)
+                      <input type="range" id="wasteGeneration" min="1" max="5" value="3" />
+                      <output id="wasteGenerationOut">3</output>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Water Usage</legend>
+                    <label>How would you rate your estimated water usage? (1 = Very High, 5 = Very Low)
+                      <input type="range" id="waterUsage" min="1" max="5" value="3" />
+                      <output id="waterUsageOut">3</output>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Supply Chain</legend>
+                    <label>How sustainable is your supply chain? (1 = Not at all, 5 = Very Sustainable)
+                      <input type="range" id="supplyChain" min="1" max="5" value="3" />
+                      <output id="supplyChainOut">3</output>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Product Lifecycle</legend>
+                    <label>How circular is your product lifecycle (recyclable, reusable)? (1 = Not at all, 5 = Very Circular)
+                      <input type="range" id="productLifecycle" min="1" max="5" value="3" />
+                      <output id="productLifecycleOut">3</output>
+                    </label>
+                </fieldset>
+
+                <div class="form-actions">
+                  <button type="button" id="calcEnvNow" class="btn-primary">Calculate Score</button>
+                  <button type="button" id="resetEnvBtn" class="btn-ghost">Reset</button>
+                </div>
+              </form>
+      
+              <aside class="results" id="envResults" aria-live="polite">
+                <div class="result-top">
+                  <h3>Environmental Score</h3>
+                  <p id="envResultShort">Complete the form and press Calculate.</p>
+                </div>
+      
+                <div class="score-wrap">
+                  <div class="radial" id="envRadial">
+                    <div class="radial-inner">
+                      <span id="envScorePercent">--</span><small>%</small>
+                    </div>
+                  </div>
+                  <div class="score-legend">
+                    <div><strong>Verdict:</strong> <span id="envVerdict">—</span></div>
+                  </div>
+                </div>
+      
+                <div class="recommendations" id="envRecommendations">
+                  <!-- JS will inject tailored recommendations -->
+                </div>
+              </aside>
+            </div>
+        </section>
+
+        <section id="resources" class="features">
+            <div class="container">
+                <h2>Sustainable Business Resources</h2>
+                <div id="resourceLinks">
+                    <!-- JS will inject links -->
+                </div>
+            </div>
+        </section>
+      </main>
+
+      <footer class="site-footer container">
+        <div>
+          <strong>VentureLens</strong> — See your business potential clearly.
+        </div>
+        <div class="footer-links">
+          <small>&copy; 2025 VentureLens. All rights reserved.</small>
+        </div>
+      </footer>
+      <script src="app.js"></script>
+      <script>
+        // Update output values when range inputs change
+        document.querySelectorAll('input[type="range"]').forEach(input => {
+          input.addEventListener('input', function() {
+            document.getElementById(this.id + 'Out').value = this.value;
+          });
+        });
+      </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feasibility Calculator - VentureLens</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="calculator-page">
+    <header class="site-header">
+        <div class="container header-inner">
+          <div class="brand">
+            <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#007BFF"/><stop offset="1" stop-color="#0056b3"/></linearGradient></defs><rect rx="12" width="64" height="64" fill="url(#g)"></rect><path d="M18 40 L32 20 L46 40 Z" fill="white" opacity="0.95"></path></svg>
+            <div class="brand-text">
+              <h1>VentureLens</h1>
+              <p class="tagline">See your business potential clearly.</p>
+            </div>
+          </div>
+          <nav class="nav">
+            <a href="index.html" class="link">Home</a>
+            <a href="calculator.html" class="link">Calculator</a>
+            <a href="about.html" class="link">About</a>
+            <a href="feedback.html" class="link">Feedback</a>
+            <a href="environment.html" class="link">Environment</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container">
+        <section id="calculator" class="calc-wrap">
+            <div class="calc-header">
+              <h2>Feasibility Calculator</h2>
+              <p>Answer the short questions below — your score appears instantly on the right.</p>
+            </div>
+      
+            <div class="calc-grid">
+              <form id="calcForm" class="calc-form" autocomplete="off" aria-label="Feasibility calculator form">
+                <!-- Idea basic info -->
+                <fieldset>
+                  <legend>Idea information</legend>
+                  <label>Business name
+                    <input id="bizName" name="bizName" type="text" placeholder="Your idea name (optional)" />
+                  </label>
+      
+                  <label>Industry / Sector
+                    <input id="industry" name="industry" type="text" placeholder="e.g., Agritech, Retail, Food" />
+                  </label>
+      
+                  <label>Stage of idea
+                    <select id="stage" name="stage">
+                      <option value="1">Just an idea</option>
+                      <option value="2">Prototype / MVP</option>
+                      <option value="3">Pilot / early customers</option>
+                      <option value="4">Scaling / established</option>
+                    </select>
+                  </label>
+                </fieldset>
+
+                <!-- Cost Breakdown -->
+                <fieldset>
+                    <legend>Cost Breakdown</legend>
+                    <label>Marketing & Sales (GHS)
+                      <input id="costMarketing" type="number" min="0" step="1" placeholder="e.g., 1000" />
+                    </label>
+                    <label>Salaries & Fees (GHS)
+                      <input id="costSalaries" type="number" min="0" step="1" placeholder="e.g., 2000" />
+                    </label>
+                    <label>Equipment & Technology (GHS)
+                      <input id="costEquipment" type="number" min="0" step="1" placeholder="e.g., 1500" />
+                    </label>
+                    <label>Other Initial Costs (GHS)
+                      <input id="costOther" type="number" min="0" step="1" placeholder="e.g., 500" />
+                    </label>
+                </fieldset>
+      
+                <!-- Market -->
+                <fieldset>
+                  <legend>Market</legend>
+                  <label>Market demand (1 = very low — 5 = very high)
+                    <input type="range" id="marketDemand" min="1" max="5" value="3" />
+                    <output id="marketDemandOut">3</output>
+                  </label>
+                  <label>Target customer reachability (1-5)
+                    <input type="range" id="marketReach" min="1" max="5" value="3" />
+                    <output id="marketReachOut">3</output>
+                  </label>
+                </fieldset>
+      
+                <!-- Costs -->
+                <fieldset>
+                  <legend>Costs & Capital</legend>
+                  <label>Access to funding (1 = none — 5 = secure)
+                    <input type="range" id="fundingAccess" min="1" max="5" value="2" />
+                    <output id="fundingAccessOut">2</output>
+                  </label>
+                </fieldset>
+      
+                <!-- Competition -->
+                <fieldset>
+                  <legend>Competition & Differentiation</legend>
+                  <label>Competition intensity (1 = low — 5 = very intense)
+                    <input type="range" id="competition" min="1" max="5" value="3" />
+                    <output id="competitionOut">3</output>
+                  </label>
+                  <label>Unique value / differentiation (1 = none — 5 = very strong)
+                    <input type="range" id="differentiation" min="1" max="5" value="3" />
+                    <output id="diffOut">3</output>
+                  </label>
+                </fieldset>
+      
+                <!-- Revenue -->
+                <fieldset>
+                  <legend>Revenue & Profitability</legend>
+                  <label>Estimated monthly revenue (currency)
+                    <input id="monthlyRevenue" type="number" min="0" step="1" placeholder="e.g., 1200" />
+                  </label>
+                  <label>Expected monthly operating cost
+                    <input id="monthlyCost" type="number" min="0" step="1" placeholder="e.g., 800" />
+                  </label>
+                  <label>Revenue predictability (1 = unpredictable — 5 = steady)
+                    <input type="range" id="revenueStability" min="1" max="5" value="3" />
+                    <output id="revenueStabilityOut">3</output>
+                  </label>
+                </fieldset>
+      
+                <!-- Team -->
+                <fieldset>
+                  <legend>Team & Execution</legend>
+                  <label>Founder's experience in sector (1-5)
+                    <input type="range" id="founderExp" min="1" max="5" value="2" />
+                    <output id="founderExpOut">2</output>
+                  </label>
+                  <label>Operational readiness (processes, partnerships) (1-5)
+                    <input type="range" id="opsReady" min="1" max="5" value="2" />
+                    <output id="opsReadyOut">2</output>
+                  </label>
+                </fieldset>
+      
+                <div class="form-actions">
+                  <button type="button" id="calcNow" class="btn-primary">Calculate Feasibility</button>
+                  <button type="button" id="saveLocal" class="btn-ghost">Save locally</button>
+                  <button type="button" id="resetBtn" class="btn-ghost">Reset</button>
+                </div>
+              </form>
+      
+              <!-- Results panel -->
+              <aside class="results" id="results" aria-live="polite">
+                <div class="result-tabs">
+                    <button type="button" class="tab-link active" data-tab="feasibility">Feasibility Score</button>
+                    <button type="button" class="tab-link" data-tab="investment">Investment Assessment</button>
+                    <button type="button" class="tab-link" data-tab="business-model">Business Model</button>
+                </div>
+
+                <div id="feasibility" class="tab-content active">
+                    <div class="result-top">
+                      <h3>Assessment Result</h3>
+                      <p id="resultShort">Complete the form and press Calculate.</p>
+                    </div>
+          
+                    <div class="score-wrap">
+                      <div class="radial" id="radial">
+                        <div class="radial-inner">
+                          <span id="scorePercent">--</span><small>%</small>
+                        </div>
+                      </div>
+                      <div class="score-legend">
+                        <div><strong>Verdict:</strong> <span id="verdict">—</span></div>
+                        <div><strong>Break-even (est):</strong> <span id="breakeven">—</span></div>
+                      </div>
+                    </div>
+          
+                    <div class="breakdown" id="breakdown">
+                      <!-- JS will inject categories -->
+                    </div>
+          
+                    <div class="recommendations" id="recommendations">
+                      <!-- JS will inject tailored recommendations -->
+                    </div>
+                </div>
+
+                <div id="investment" class="tab-content">
+                    <h3>Investment Assessment</h3>
+                    <div id="investment-content"></div>
+                </div>
+
+                <div id="business-model" class="tab-content">
+                    <h3>Business Model</h3>
+                    <div id="business-model-content"></div>
+                    <button type="button" id="downloadBusinessModel" class="btn-primary">Download Business Model</button>
+                </div>
+      
+                <div class="result-actions">
+                  <button type="button" id="printBtn" class="btn-primary">Print / Save as PDF</button>
+                  <button type="button" id="downloadJson" class="btn-ghost">Download JSON</button>
+                  <button type="button" id="downloadCsv" class="btn-ghost">Download CSV</button>
+                  <button type="button" id="shareLink" class="btn-ghost">Copy Summary</button>
+                </div>
+      
+              </aside>
+            </div>
+          </section>
+      </main>
+
+      <footer class="site-footer container">
+        <div>
+          <strong>VentureLens</strong> — See your business potential clearly.
+        </div>
+        <div class="footer-links">
+          <small>&copy; 2025 VentureLens. All rights reserved.</small>
+        </div>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="app.js"></script>
+</body>
+</html>
